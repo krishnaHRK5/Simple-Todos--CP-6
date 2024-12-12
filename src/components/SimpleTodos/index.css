@@ -1,0 +1,22 @@
+.app-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffc2a0;
+  padding: 45px;
+}
+.list-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 25px;
+  color:  #000000;
+  font-family: 'roboto';
+}
+h1{
+  color: #ff8542;
+}

@@ -1,0 +1,16 @@
+.under-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+button {
+  color: #ff0b37;
+  background-color: #ffffff;
+  border: #ff0b37 1px solid;
+  border-radius: 15px;
+  width: 126px;
+  height: 30px;
+  margin: 20px;
+}
