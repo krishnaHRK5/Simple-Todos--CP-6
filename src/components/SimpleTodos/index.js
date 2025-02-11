@@ -1,8 +1,6 @@
-import {Component} from 'react'
-
-import TodoItem from '../TodoItem'
-
-import './index.css'
+import React, { useState } from 'react';
+import TodoItem from '../TodoItem';
+import './index.css';
 
 const initialTodosList = [
   {
@@ -37,38 +35,32 @@ const initialTodosList = [
     id: 8,
     title: 'Get essentials for Sunday car wash',
   },
-]
+];
 
-class SimpleTodos extends Component {
-  state = {todoList: initialTodosList}
+const SimpleTodos = () => {
+  const [todoList, setTodoList] = useState(initialTodosList);
 
-  onDeleteTodo = id => {
-    const {todoList} = this.state
-    const updatedList = todoList.filter(eachTodo => eachTodo.id !== id)
+  const onDeleteTodo = id => {
+    const updatedList = todoList.filter(eachTodo => eachTodo.id !== id);
+    setTodoList(updatedList);
+  };
 
-    this.setState({todoList: updatedList})
-  }
-
-  render() {
-    const {todoList} = this.state
-
-    return (
-      <div className="app-con">
-        <div className="list-con">
-          <h1>Simple Todos</h1>
-          <ul>
-            {todoList.map(eachTodo => (
-              <TodoItem
-                key={eachTodo.id}
-                onDeleteTodo={this.onDeleteTodo}
-                todoDetails={eachTodo}
-              />
-            ))}
-          </ul>
-        </div>
+  return (
+    <div className="app-con">
+      <div className="list-con">
+        <h1>Simple Todos</h1>
+        <ul>
+          {todoList.map(eachTodo => (
+            <TodoItem
+              key={eachTodo.id}
+              onDeleteTodo={onDeleteTodo}
+              todoDetails={eachTodo}
+            />
+          ))}
+        </ul>
       </div>
-    )
-  }
-}
+    </div>
+  );
+};
 
-export default SimpleTodos
+export default SimpleTodos;
